@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_test/question_1.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -13,7 +14,10 @@ class Home extends StatelessWidget {
             Text(
                 "Click on the buttons below to view my answer for the respective question"),
             CupertinoButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Question1()));
+              },
               color: Colors.blue,
               child: Text("Question 1"),
             ),
