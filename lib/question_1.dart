@@ -95,6 +95,38 @@ class Question1 extends StatelessWidget {
                             topRight: Radius.circular(20),
                           ),
                         ),
+                        child: ListView(
+                          children: [
+                            SizedBox(
+                              width: 100,
+                              child: TabBar(
+                                indicatorSize: TabBarIndicatorSize.label,
+                                indicatorColor: Colors.white,
+                                labelStyle: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.bold),
+                                labelColor: Colors.black,
+                                unselectedLabelColor: Colors.grey,
+                                tabs: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Friends",
+                                        textAlign: TextAlign.left,
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Community",
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
