@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-                "Click on the buttons bellow to view my answer for the respective question"),
+                "Click on the buttons below to view my answer for the respective question"),
             CupertinoButton(
               onPressed: () {},
               color: Colors.blue,
