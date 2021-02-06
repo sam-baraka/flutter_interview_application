@@ -125,8 +125,11 @@ class Question1 extends StatelessWidget {
                                 )
                               ],
                             ),
-                            TabBarView(
-                              children: [FriendsWidget(), CommunityWidget()],
+                            Container(
+                              height: 200,
+                              child: TabBarView(
+                                children: [FriendsWidget(), CommunityWidget()],
+                              ),
                             )
                           ],
                         ),
