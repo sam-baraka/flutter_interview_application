@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_test/question_1.dart';
+
+import '1/question_1.dart';
 
 class Home extends StatelessWidget {
   @override

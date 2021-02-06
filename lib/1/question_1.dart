@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_test/1/widgets/friends_widget.dart';
+
+import 'widgets/community_widget.dart';
 
 class Question1 extends StatelessWidget {
   @override
