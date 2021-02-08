@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_test/3/widgets/chart_widget.dart';
+import 'package:flutter_interview_test/cubits/chart_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Question3 extends StatelessWidget {
-  TextEditingController menController = TextEditingController();
-  TextEditingController womenController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var menController = TextEditingController();
+    var womenController = TextEditingController();
     return Scaffold(
       appBar: CupertinoNavigationBar(
         middle: Text("Question 3"),
@@ -43,6 +45,11 @@ class Question3 extends StatelessWidget {
                   child: TextFormField(
                     controller: menController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
+                    onChanged: (value) {
+                      context.read<ChartCubit>().update(
+                          female: int.parse(menController.text),
+                          male: int.parse(value));
+                    },
                   ),
                 ),
                 SizedBox(
@@ -52,6 +59,11 @@ class Question3 extends StatelessWidget {
                   child: TextFormField(
                     controller: womenController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
+                    onChanged: (value) {
+                      context.read<ChartCubit>().update(
+                          male: int.parse(menController.text),
+                          female: int.parse(value));
+                    },
                   ),
                 ),
               ],
