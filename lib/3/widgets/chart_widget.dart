@@ -16,29 +16,26 @@ class _ChartWidgetState extends State<ChartWidget> {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.3,
-      child: Card(
-        color: Colors.grey[200],
-        child: AspectRatio(
-          aspectRatio: 1,
-          child: PieChart(
-            PieChartData(
-                pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
-                  setState(() {
-                    if (pieTouchResponse.touchInput is FlLongPressEnd ||
-                        pieTouchResponse.touchInput is FlPanEnd) {
-                      touchedIndex = -1;
-                    } else {
-                      touchedIndex = pieTouchResponse.touchedSectionIndex;
-                    }
-                  });
-                }),
-                borderData: FlBorderData(
-                  show: false,
-                ),
-                sectionsSpace: 0,
-                centerSpaceRadius: 0,
-                sections: showingSections()),
-          ),
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: PieChart(
+          PieChartData(
+              pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
+                setState(() {
+                  if (pieTouchResponse.touchInput is FlLongPressEnd ||
+                      pieTouchResponse.touchInput is FlPanEnd) {
+                    touchedIndex = -1;
+                  } else {
+                    touchedIndex = pieTouchResponse.touchedSectionIndex;
+                  }
+                });
+              }),
+              borderData: FlBorderData(
+                show: false,
+              ),
+              sectionsSpace: 0,
+              centerSpaceRadius: 0,
+              sections: showingSections()),
         ),
       ),
     );
