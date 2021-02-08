@@ -46,9 +46,9 @@ class Question3 extends StatelessWidget {
                     controller: menController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
-                      context.read<ChartCubit>().update(
-                          female: int.parse(menController.text),
-                          male: int.parse(value));
+                      context
+                          .read<MaleChartCubit>()
+                          .update(value: int.parse(value));
                     },
                   ),
                 ),
@@ -60,9 +60,9 @@ class Question3 extends StatelessWidget {
                     controller: womenController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
-                      context.read<ChartCubit>().update(
-                          male: int.parse(menController.text),
-                          female: int.parse(value));
+                      context
+                          .read<FemaleChartCubit>()
+                          .update(value: int.parse(value));
                     },
                   ),
                 ),

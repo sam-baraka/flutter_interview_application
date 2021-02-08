@@ -1,5 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:flutter_interview_test/cubits/chart_cubit.dart';
 
 class ChartWidget extends StatefulWidget {
   @override
@@ -14,7 +17,7 @@ class _ChartWidgetState extends State<ChartWidget> {
     return AspectRatio(
       aspectRatio: 1.3,
       child: Card(
-        color: Colors.white,
+        color: Colors.grey[200],
         child: AspectRatio(
           aspectRatio: 1,
           child: PieChart(
@@ -51,19 +54,19 @@ class _ChartWidgetState extends State<ChartWidget> {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: const Color(0xff0293ee),
-            value: 40,
+            color: Colors.white,
+            value: context.watch<MaleChartCubit>().state.toDouble(),
             // title: '40%',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xffffffff)),
+                color: Colors.black),
           );
         case 1:
           return PieChartSectionData(
-            color: const Color(0xfff8b250),
-            value: 30,
+            color: Colors.lightBlue,
+            value: context.watch<FemaleChartCubit>().state.toDouble(),
             // title: '30%',
             radius: radius,
             titleStyle: TextStyle(

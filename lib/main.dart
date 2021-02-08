@@ -18,8 +18,9 @@ class InterviewApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<SelectTeamCubit>(create: (context) => SelectTeamCubit(0)),
-        BlocProvider<ChartCubit>(
-            create: (context) => ChartCubit(ChartDetails(0, 0))),
+        BlocProvider<MaleChartCubit>(create: (context) => MaleChartCubit(0)),
+        BlocProvider<FemaleChartCubit>(
+            create: (context) => FemaleChartCubit(0)),
       ],
       child: MaterialApp(
         home: Home(),
