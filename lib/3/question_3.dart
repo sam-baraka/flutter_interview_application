@@ -7,8 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class Question3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var menController = TextEditingController();
-    var womenController = TextEditingController();
     return Scaffold(
       appBar: CupertinoNavigationBar(
         middle: Text("Question 3"),
@@ -43,7 +41,6 @@ class Question3 extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextFormField(
-                    controller: menController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
                       context
@@ -57,7 +54,6 @@ class Question3 extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextFormField(
-                    controller: womenController,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
                       context
@@ -68,7 +64,35 @@ class Question3 extends StatelessWidget {
                 ),
               ],
             ),
-            ChartWidget()
+            Expanded(
+                child: Card(
+                    color: Colors.grey[200],
+                    child: Column(
+                      children: [
+                        ChartWidget(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height: 14,
+                              width: 14,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.black)),
+                            ),
+                            Text("Men"),
+                            Container(
+                              height: 14,
+                              width: 14,
+                              decoration: BoxDecoration(
+                                  color: Colors.lightBlue,
+                                  border: Border.all(color: Colors.black)),
+                            ),
+                            Text("Women"),
+                          ],
+                        ),
+                      ],
+                    )))
           ],
         ),
       ),
