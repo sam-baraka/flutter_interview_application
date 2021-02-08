@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_interview_test/cubits/chart_cubit.dart';
 import 'package:flutter_interview_test/cubits/select_team_cubit.dart';
 import 'package:flutter_interview_test/home.dart';
 
@@ -17,6 +18,8 @@ class InterviewApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<SelectTeamCubit>(create: (context) => SelectTeamCubit(0)),
+        BlocProvider<ChartCubit>(
+            create: (context) => ChartCubit(ChartDetails(0, 0))),
       ],
       child: MaterialApp(
         home: Home(),
