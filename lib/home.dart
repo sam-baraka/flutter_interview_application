@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_test/2/question_2.dart';
+import 'package:flutter_interview_test/3/question_3.dart';
 
 import '1/question_1.dart';
 
@@ -32,7 +33,10 @@ class Home extends StatelessWidget {
               child: Text("Question 2"),
             ),
             CupertinoButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Question3()));
+              },
               color: Colors.blue,
               child: Text("Question 3"),
             ),
