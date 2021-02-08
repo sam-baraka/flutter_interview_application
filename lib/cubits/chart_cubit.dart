@@ -6,6 +6,10 @@ class MaleChartCubit extends Cubit<int> {
   update({int value}) {
     emit(value);
   }
+
+  String percentage({int female}) {
+    return ((state / (state + female)) * 100).toStringAsFixed(3);
+  }
 }
 
 class FemaleChartCubit extends Cubit<int> {
@@ -13,5 +17,9 @@ class FemaleChartCubit extends Cubit<int> {
 
   update({int value}) {
     emit(value);
+  }
+
+  String percentage({int male}) {
+    return ((state / (state + male)) * 100).toStringAsFixed(3);
   }
 }
