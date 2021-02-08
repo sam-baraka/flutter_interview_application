@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_test/2/widgets/card_widget.dart';
 
 class Question2 extends StatefulWidget {
   @override
@@ -8,6 +9,10 @@ class Question2 extends StatefulWidget {
 class _Question2State extends State<Question2> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: CardWidget(),
+      ),
+    );
   }
 }
