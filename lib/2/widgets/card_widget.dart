@@ -126,7 +126,8 @@ class CardWidget extends StatelessWidget {
                             context.watch<SelectTeamCubit>().state == 1 ||
                                     context.watch<SelectTeamCubit>().state == 2
                                 ? Text(
-                                    "They meet in the second round at 18:00 BST.")
+                                    "They meet in the second round at 18:00 BST.",
+                                    style: TextStyle(color: Colors.white))
                                 : Container()
                           ],
                         ),
