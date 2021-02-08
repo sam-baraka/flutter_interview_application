@@ -54,6 +54,7 @@ class CardWidget extends StatelessWidget {
                                         ? Row(
                                             children: [
                                               Expanded(
+                                                flex: 51,
                                                 child: Container(
                                                   color: Colors.red,
                                                   child: Text("READING",
@@ -62,6 +63,7 @@ class CardWidget extends StatelessWidget {
                                                 ),
                                               ),
                                               Expanded(
+                                                flex: 49,
                                                 child: Container(
                                                   child: Text("51%",
                                                       style: TextStyle(
@@ -96,6 +98,7 @@ class CardWidget extends StatelessWidget {
                                         ? Row(
                                             children: [
                                               Expanded(
+                                                flex: 49,
                                                 child: Container(
                                                   color: Colors.red,
                                                   child: Text("LUTON TOWN",
@@ -104,6 +107,7 @@ class CardWidget extends StatelessWidget {
                                                 ),
                                               ),
                                               Expanded(
+                                                flex: 51,
                                                 child: Container(
                                                   child: Text("49%",
                                                       style: TextStyle(
