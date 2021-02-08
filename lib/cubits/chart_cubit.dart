@@ -1,17 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ChartCubit extends Cubit<ChartDetails> {
-  ChartCubit(ChartDetails state) : super(state);
-  update({int male, int female}) {
-    emit(ChartDetails(male, female));
+class MaleChartCubit extends Cubit<int> {
+  MaleChartCubit(int state) : super(state);
+
+  update({int value}) {
+    emit(value);
   }
 }
 
-class ChartDetails {
-  int male;
-  int female;
-  ChartDetails(
-    this.male,
-    this.female,
-  );
+class FemaleChartCubit extends Cubit<int> {
+  FemaleChartCubit(int state) : super(state);
+
+  update({int value}) {
+    emit(value);
+  }
 }
