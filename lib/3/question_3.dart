@@ -41,6 +41,9 @@ class Question3 extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextFormField(
+                    controller: TextEditingController(
+                        text: context.read<MaleChartCubit>().state.toString()),
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
                       context
@@ -54,6 +57,10 @@ class Question3 extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextFormField(
+                    controller: TextEditingController(
+                        text:
+                            context.read<FemaleChartCubit>().state.toString()),
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                     onChanged: (value) {
                       context
