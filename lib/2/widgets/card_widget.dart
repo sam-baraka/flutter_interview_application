@@ -139,16 +139,19 @@ class CardWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Row(
-                children: [
-                  Expanded(child: Text("6m")),
-                  Expanded(child: Icon(Icons.share)),
-                  Expanded(child: Icon(Icons.share))
-                ],
-              ),
-            )
+            context.watch<SelectTeamCubit>().state == 1 ||
+                    context.watch<SelectTeamCubit>().state == 2
+                ? Container()
+                : Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Row(
+                      children: [
+                        Expanded(child: Text("6m")),
+                        Expanded(child: Icon(Icons.share)),
+                        Expanded(child: Icon(Icons.share))
+                      ],
+                    ),
+                  )
           ],
         ),
       ),
