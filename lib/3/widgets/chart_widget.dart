@@ -56,7 +56,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           return PieChartSectionData(
             color: Colors.white,
             value: context.watch<MaleChartCubit>().state.toDouble(),
-            // title: '40%',
+            title:
+                '${context.watch<MaleChartCubit>().percentage(female: context.watch<FemaleChartCubit>().state)} %',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -67,7 +68,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           return PieChartSectionData(
             color: Colors.lightBlue,
             value: context.watch<FemaleChartCubit>().state.toDouble(),
-            // title: '30%',
+            title:
+                '${context.watch<FemaleChartCubit>().percentage(male: context.watch<MaleChartCubit>().state)} %',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
