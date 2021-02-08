@@ -42,7 +42,7 @@ class CardWidget extends StatelessWidget {
                             GestureDetector(
                               onTap: () {
                                 context
-                                    .read()<SelectTeamCubit>()
+                                    .read<SelectTeamCubit>()
                                     .select(value: 1);
                               },
                               child: Container(
