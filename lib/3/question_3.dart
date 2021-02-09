@@ -80,6 +80,17 @@ class Question3 extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Gender",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
                       ChartWidget(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
