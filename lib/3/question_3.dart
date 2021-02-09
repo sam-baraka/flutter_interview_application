@@ -8,6 +8,8 @@ class Question3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomPadding: true,
       appBar: CupertinoNavigationBar(
         middle: Text("Question 3"),
       ),
@@ -71,35 +73,56 @@ class Question3 extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(
-                child: Card(
-                    color: Colors.grey[200],
-                    child: Column(
-                      children: [
-                        ChartWidget(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              height: 14,
-                              width: 14,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(color: Colors.black)),
-                            ),
-                            Text("Men"),
-                            Container(
-                              height: 14,
-                              width: 14,
-                              decoration: BoxDecoration(
-                                  color: Colors.lightBlue,
-                                  border: Border.all(color: Colors.black)),
-                            ),
-                            Text("Women"),
-                          ],
-                        ),
-                      ],
-                    )))
+            Flexible(
+              // height: 350,
+              child: Card(
+                  color: Colors.grey[200],
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ChartWidget(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: Container(),
+                          ),
+                          Container(
+                            height: 14,
+                            width: 14,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.black)),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text("Men"),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 14,
+                            width: 14,
+                            decoration: BoxDecoration(
+                                color: Colors.lightBlue,
+                                border: Border.all(color: Colors.black)),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text("Women"),
+                          Expanded(
+                            child: Container(),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  )),
+            )
           ],
         ),
       ),
