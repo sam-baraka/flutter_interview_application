@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_test/app_images.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 List<StaggeredTile> _staggeredTiles = const <StaggeredTile>[
@@ -73,19 +74,11 @@ class WidgetTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Card(
-      color: backgroundColor,
-      child: new InkWell(
-        onTap: () {},
-        child: new Center(
-          child: new Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: new Icon(
-              iconData,
-              color: Colors.white,
-            ),
-          ),
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10.0),
+      child: Image.asset(
+        AppImages.getRandomImage(),
+        fit: BoxFit.fitHeight,
       ),
     );
   }
