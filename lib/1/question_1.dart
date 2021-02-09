@@ -137,7 +137,19 @@ class Question1 extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              DiscoverWidget()
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Discover",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: DiscoverWidget(),
+                              )
                             ],
                           ),
                         ),
